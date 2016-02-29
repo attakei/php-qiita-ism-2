@@ -14,3 +14,16 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+
+// Authenticate
+$app->get('/auth', function () use ($app) {
+    return view('auth.form');
+});
+$app->post('/auth/google', [
+    'as' => 'auth_google_oauth',
+    function ()
+    {
+        return 'Auth redirecting';
+    }
+]);

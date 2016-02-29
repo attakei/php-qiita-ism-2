@@ -17,4 +17,10 @@ class ExampleTest extends TestCase
             $this->response->getContent(), $this->app->version()
         );
     }
+
+    public function testAuthForm()
+    {
+        $this->get('/auth');
+        $this->assertRegExp('/<form/', $this->response->getContent());
+    }
 }
