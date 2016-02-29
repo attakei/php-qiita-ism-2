@@ -31,4 +31,9 @@ class User extends Model implements
     protected $hidden = [
         'password',
     ];
+
+    public static function findByEmail($email)
+    {
+        return static::where('email', $email)->first();
+    }
 }
