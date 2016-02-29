@@ -16,8 +16,8 @@ class InitUser extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->string('app_token');
-            $table->string('oauth_token');
+            $table->string('app_token')->nullable();
+            $table->string('oauth_token')->nullable();
             $table->timestamps();
         });
     }
